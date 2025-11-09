@@ -7,9 +7,10 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://jelv-dev.github.io/',
-  base: '/portfolio_1_web-landing',
-
+  // 'site' y 'base' se comentan para forzar rutas relativas.
+  // site: 'https://jelv-dev.github.io/',
+  // base: '/portfolio_1_web-landing',
+  
   // Las integraciones deben estar aquí, correctamente llamadas como funciones
   integrations: [
     tailwind(),
@@ -17,6 +18,7 @@ export default defineConfig({
   ],
 
   // Configuración de Vite para optimización de build
+  // La propiedad 'build.assets' es la clave para generar rutas relativas.
   vite: {
     build: {
       minify: true, // Asegura la minificación de JS/CSS

@@ -13,4 +13,13 @@ export default defineConfig({
     tailwind(),
     sitemap()
   ],
+
+  // Configuración de Vite para optimización de build
+  vite: {
+    build: {
+      minify: true, // Asegura la minificación de JS/CSS
+      cssCodeSplit: true, // Habilita la división de código CSS para mejor rendimiento
+      sourcemap: false, // Deshabilita sourcemaps en producción para reducir tamaño
+    },
+  },
 });

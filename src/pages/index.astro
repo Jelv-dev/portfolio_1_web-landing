@@ -67,7 +67,11 @@ const servicesData = [
               d="M4 6h16M4 12h16m-7 6h7"></path></svg
           >
         </button>
-        <a href="#" class="font-bold text-xl">Ascendia Digital</a>
+        <a
+          href="#"
+          class="font-bold text-xl"
+          aria-label="Ir al inicio de la página">Ascendia Digital</a
+        >
       </div>
       <nav class="hidden md:flex items-center gap-8">
         <a href="#servicios" class="hover:text-accent transition-colors"
@@ -122,7 +126,7 @@ const servicesData = [
           <h1 class="text-5xl font-extrabold text-center mb-12">
             SISTEMAS INTELIGENTES PARA EL MÁXIMO ESCALADO
           </h1>
-          <p class="text-xl text-gray-300 mb-8">
+          <p class="text-xl text-gray-200 mb-8">
             Convertimos tus operaciones manuales en sistemas automatizados que
             escalan. Aumenta tu rentabilidad y libera a tu equipo para que se
             enfoque en crecer.
@@ -141,10 +145,11 @@ const servicesData = [
           <img
             src={heroImage.src}
             alt="Gráfico de automatización de datos"
+            width="1024"
+            height="1024"
             loading="eager"
             decoding="async"
-            width={heroImage.width}
-            height={heroImage.height}
+            fetchpriority="high"
             class="w-full h-full object-contain"
           />
         </div>
@@ -176,7 +181,7 @@ const servicesData = [
         <h2 class="text-5xl font-extrabold text-center mb-4">
           ¿LISTO PARA ESCALAR?
         </h2>
-        <p class="text-2xl text-primary-400 text-center mb-10">
+        <p class="text-2xl text-gray-300 text-center mb-10">
           Agenda tu consultoría estratégica de 15 minutos.
         </p>
         <ContactForm />

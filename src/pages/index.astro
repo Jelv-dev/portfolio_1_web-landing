@@ -33,6 +33,17 @@ const servicesData = [
   title="Ascendia Digital: Automatización para Escalar tu Negocio"
   description="Transforma el caos operacional en sistemas escalables y rentables con consultoría de alto valor."
 >
+  <!-- Bloque de Éxito del Formulario -->
+  <div
+    id="success-message"
+    class="fixed top-0 left-0 w-full z-[100] bg-accent p-4 text-center transform -translate-y-full transition-transform duration-500"
+  >
+    <p class="text-gray-900 font-bold">
+      ✅ ¡Éxito! Su solicitud ha sido recibida. Pronto nos pondremos en
+      contacto.
+    </p>
+  </div>
+
   <!-- HEADER -->
   <header class="sticky top-0 z-50 py-4 bg-black/50 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -129,3 +140,24 @@ const servicesData = [
   </main>
   <Footer />
 </Layout>
+
+<script is:inline>
+  // Script para mostrar el banner de éxito
+  if (window.location.hash === "#success") {
+    const successBanner = document.getElementById("success-message");
+    if (successBanner) {
+      // Eliminar la clase de ocultamiento (transform -translate-y-full)
+      successBanner.classList.remove("transform", "-translate-y-full");
+
+      // Opcional: Eliminar el hash de la URL después de un breve momento para limpiar la URL de la barra de direcciones
+      setTimeout(() => {
+        // Utilizamos replaceState para no añadir una entrada al historial del navegador
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search
+        );
+      }, 1000);
+    }
+  }
+</script>

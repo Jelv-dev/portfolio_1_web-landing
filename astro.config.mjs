@@ -7,8 +7,6 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://jelv-dev.github.io/',
-  base: '/portfolio_1_web-landing',
   
   // Las integraciones deben estar aquí, correctamente llamadas como funciones
   integrations: [

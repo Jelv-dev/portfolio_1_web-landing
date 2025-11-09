@@ -50,3 +50,10 @@ Sigue estos pasos para levantar el proyecto en tu máquina local.
     ```bash
     npm run build
     ```
+
+    ## 🔗 DEMOSTRACIÓN EN VIVO (Deploy)
+
+Este proyecto está alojado en Vercel para garantizar el mejor rendimiento.
+**VER SITIO EN LÍNEA:** [https://portfolio-1-web-landing.vercel.app](https://portfolio-1-web-landing.vercel.app)
+
+***Nota sobre el Formulario:*** *Debido a las limitaciones del plan gratuito de Formspree, el formulario redirige a una página de confirmación externa.*

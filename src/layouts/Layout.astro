@@ -37,8 +37,14 @@ const { title, description } = Astro.props;
       html {
         font-display: swap;
       }
+    </style>
 
-      /* Esta etiqueta de estilo vacía ayuda a asegurar que el procesador de CSS se active. */
+    <!-- Esta etiqueta <style> vacía con la directiva de Tailwind puede ayudar a forzar
+         al compilador a procesar el CSS importado en el script de Astro. -->
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
     </style>
   </head>
   <body class="bg-gray-950 text-white font-sans">

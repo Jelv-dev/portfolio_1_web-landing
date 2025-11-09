@@ -7,9 +7,12 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  // 'site' y 'base' se comentan para forzar rutas relativas.
-  // site: 'https://jelv-dev.github.io/',
-  // base: '/portfolio_1_web-landing',
+  // 'site' y 'base' se comentan para forzar rutas relativas y evitar conflictos.
+  // site: 'https://jelv-dev.github.io/', // Comentado
+  // base: '/portfolio_1_web-landing',    // Comentado
+  build: {
+    assetsPrefix: 'relative', // Fuerza a Astro a generar rutas relativas para todos los assets
+  },
   
   // Las integraciones deben estar aquí, correctamente llamadas como funciones
   integrations: [
@@ -17,8 +20,7 @@ export default defineConfig({
     sitemap()
   ],
 
-  // Configuración de Vite para optimización de build
-  // La propiedad 'build.assets' es la clave para generar rutas relativas.
+  // Configuración de Vite para optimización de build (independiente de assetsPrefix)
   vite: {
     build: {
       minify: true, // Asegura la minificación de JS/CSS

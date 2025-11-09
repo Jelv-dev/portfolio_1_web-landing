@@ -1,16 +1,131 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import TestimonialBlock from "../components/TestimonialBlock.astro";
+import FAQSection from "../components/FAQSection.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
+import heroImage from "../assets/automation-hero.png";
 
+const servicesData = [
+  {
+    title: "Automatización de Procesos Clave",
+    description:
+      "Eliminamos tareas manuales repetitivas que drenan el tiempo de su equipo.",
+    icon: "cpu-chip",
+  },
+  {
+    title: "Estructura de Datos Escalonable",
+    description:
+      "Diseño de bases de datos que soportan el crecimiento de 5x sin fallos.",
+    icon: "circle-stack",
+  },
+  {
+    title: "Auditoría de Rendimiento Web",
+    description:
+      "Análisis técnico profundo para garantizar Lighthouse 100/100 y SEO perfecto.",
+    icon: "rocket-launch",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Ascendia Digital: Automatización para Escalar tu Negocio"
+  description="Transforma el caos operacional en sistemas escalables y rentables con consultoría de alto valor."
+>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 py-4 bg-black/50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div class="font-bold text-xl">Ascendia Digital</div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#servicios" class="hover:text-accent transition-colors"
+          >Servicios</a
+        >
+        <a href="#testimonios" class="hover:text-accent transition-colors"
+          >Testimonios</a
+        >
+        <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
+      </nav>
+      <a
+        href="#contacto"
+        class="bg-accent text-gray-900 font-bold px-4 py-2 rounded-md hover:bg-emerald-400 transition-colors hidden md:block"
+      >
+        Agenda Tu Consultoría
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <div class="max-w-7xl mx-auto px-4">
+      <section
+        class="min-h-[85vh] grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+      >
+        <!-- Bloque de Texto -->
+        <div class="md:col-span-7 pt-10 md:pt-0">
+          <h1 class="text-5xl font-extrabold text-center mb-12">
+            SISTEMAS INTELIGENTES PARA EL MÁXIMO ESCALADO
+          </h1>
+          <p class="text-xl text-gray-300 mb-8">
+            Convertimos tus operaciones manuales en sistemas automatizados que
+            escalan. Aumenta tu rentabilidad y libera a tu equipo para que se
+            enfoque en crecer.
+          </p>
+          <a
+            href="#contacto"
+            class="inline-block bg-accent text-gray-900 font-bold px-8 py-4 text-lg rounded-md hover:bg-emerald-400 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-accent/30"
+            role="button"
+          >
+            Agenda Tu Consultoría
+          </a>
+        </div>
+
+        <!-- Bloque Visual (Gráfico Abstracto) -->
+        <div class="relative md:col-span-5 h-full min-h-[300px] md:min-h-0">
+          <img
+            src={heroImage.src}
+            alt="Gráfico de automatización de datos"
+            loading="eager"
+            decoding="async"
+            width={heroImage.width}
+            height={heroImage.height}
+            class="w-full h-full object-contain"
+          />
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section id="servicios" class="py-16">
+        <h2 class="text-5xl font-extrabold text-center mb-12">
+          NUESTROS SISTEMAS DE ALTO VALOR
+        </h2>
+        <ServicesGrid services={servicesData} />
+      </section>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section id="testimonios">
+        <TestimonialBlock />
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section id="faq" class="py-16">
+        <h2 class="text-5xl font-extrabold text-center mb-12">
+          PREGUNTAS FRECUENTES (SEO/IA)
+        </h2>
+        <FAQSection />
+      </section>
+
+      <!-- CONTACT/CTA SECTION -->
+      <section id="contacto" class="py-16 text-center">
+        <h2 class="text-5xl font-extrabold text-center mb-4">
+          ¿LISTO PARA ESCALAR?
+        </h2>
+        <p class="text-2xl text-primary-400 text-center mb-10">
+          Agenda tu consultoría estratégica de 15 minutos.
+        </p>
+        <ContactForm />
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

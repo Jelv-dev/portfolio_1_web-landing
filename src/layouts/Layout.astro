@@ -1,0 +1,77 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="overflow-x-hidden">
+  <head>
+    <!-- Metadatos Esenciales -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://[SU_USUARIO].github.io/portfolio_1_web-landing"
+    />
+
+    <!-- CLS Fix: Font Display -->
+    <style>
+      html {
+        font-display: swap;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-950 text-white font-sans">
+    <!-- Banner de Cookies -->
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 right-0 z-[100] bg-gray-800/90 backdrop-blur-sm p-4 shadow-2xl hidden"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <p class="text-sm text-gray-300">
+          Usamos cookies técnicas. Al continuar, acepta su uso.
+        </p>
+        <button
+          id="accept-cookies-btn"
+          class="flex-shrink-0 bg-accent text-gray-950 font-bold py-2 px-4 rounded-lg text-sm hover:bg-emerald-400 transition-colors"
+        >
+          Aceptar
+        </button>
+      </div>
+    </div>
+
+    <slot />
+
+    <script is:inline>
+      const banner = document.getElementById("cookie-banner");
+      const acceptBtn = document.getElementById("accept-cookies-btn");
+      if (!document.cookie.includes("cookies_accepted=true")) {
+        banner.classList.remove("hidden");
+      }
+      acceptBtn.addEventListener("click", () => {
+        banner.classList.add("hidden");
+        const date = new Date();
+        date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
+        document.cookie = `cookies_accepted=true; expires=${date.toUTCString()}; path=/; SameSite=Lax`;
+      });
+    </script>
+  </body>
+</html>

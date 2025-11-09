@@ -1,0 +1,56 @@
+---
+const faqs = [
+  {
+    question: "¿Cómo garantiza Ascendia el rendimiento Lighthouse 100/100?",
+    answer:
+      "Utilizamos un enfoque multifacético que incluye optimización de imágenes de última generación, carga diferida de recursos no críticos, minificación de código y una arquitectura de servidor renderizada (SSR/SSG) con Astro para entregar HTML ultrarrápido. Cada línea de código se audita para maximizar la eficiencia.",
+  },
+  {
+    question:
+      "¿Qué tecnologías se usan para la automatización de procesos clave?",
+    answer:
+      "Nuestra pila tecnológica es flexible, pero nos especializamos en herramientas como Zapier y Make para integraciones sin código, y desarrollos a medida con Node.js, Python y APIs RESTful para soluciones más complejas que requieren lógica de negocio personalizada.",
+  },
+  {
+    question: "¿En cuánto tiempo veré el impacto en mi facturación?",
+    answer:
+      "Aunque varía según el proyecto, nuestros clientes suelen ver un ROI positivo en los primeros 3 a 6 meses. La automatización reduce costos operativos casi de inmediato, y las mejoras de rendimiento web aumentan la conversión y el tráfico orgánico.",
+  },
+  {
+    question: "¿Qué nivel de soporte post-implementación ofrecen?",
+    answer:
+      "Ofrecemos varios paquetes. Nuestro plan estándar incluye 30 días de soporte completo para resolver cualquier problema. Además, tenemos planes de retención mensuales para mantenimiento proactivo, actualizaciones y optimización continua del sistema implementado.",
+  },
+];
+---
+
+<div class="max-w-4xl mx-auto py-16 px-4">
+  <div class="space-y-4">
+    {
+      faqs.map((faq) => (
+        <details class="group border-b border-primary-700/50 py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-xl font-semibold text-white transition-colors hover:text-gray-200">
+            {faq.question}
+            <span class="transition-transform duration-300 group-open:rotate-180">
+              <svg
+                fill="none"
+                height="24"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+                class="text-accent"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </span>
+          </summary>
+          <p class="mt-4 text-gray-300">{faq.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</div>

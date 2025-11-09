@@ -45,9 +45,30 @@ const servicesData = [
   </div>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 py-4 bg-black/50 backdrop-blur-sm">
+  <header class="sticky top-0 z-50 py-4 bg-gray-950/90 backdrop-blur-md h-16">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
-      <div class="font-bold text-xl">Ascendia Digital</div>
+      <div class="flex items-center gap-4">
+        <!-- Botón de Hamburguesa para móvil -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-white focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path></svg
+          >
+        </button>
+        <a href="#" class="font-bold text-xl">Ascendia Digital</a>
+      </div>
       <nav class="hidden md:flex items-center gap-8">
         <a href="#servicios" class="hover:text-accent transition-colors"
           >Servicios</a
@@ -58,13 +79,37 @@ const servicesData = [
         <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
       </nav>
       <a
+        id="header-cta"
         href="#contacto"
-        class="bg-accent text-gray-900 font-bold px-4 py-2 rounded-md hover:bg-emerald-400 transition-colors hidden md:block"
+        class="hidden md:inline-block bg-accent text-gray-900 font-bold px-4 py-2 rounded-md hover:bg-emerald-400 transition-colors"
       >
         Agenda Tu Consultoría
       </a>
     </div>
   </header>
+
+  <!-- Menú Off-Canvas para móvil -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
+  <div
+    id="mobile-menu"
+    class="fixed top-16 bottom-0 left-0 w-64 bg-gray-950/90 backdrop-blur-md z-40 transform -translate-x-full transition-transform duration-300"
+  >
+    <nav class="flex flex-col p-8 gap-8">
+      <a href="#servicios" class="text-xl hover:text-accent transition-colors"
+        >Servicios</a
+      >
+      <a href="#testimonios" class="text-xl hover:text-accent transition-colors"
+        >Testimonios</a
+      >
+      <a href="#faq" class="text-xl hover:text-accent transition-colors">FAQ</a>
+      <a
+        href="#contacto"
+        class="bg-accent text-gray-900 font-bold p-3 mt-4 text-center rounded-md"
+      >
+        Agenda Tu Consultoría
+      </a>
+    </nav>
+  </div>
 
   <!-- HERO SECTION -->
   <main>
@@ -160,4 +205,30 @@ const servicesData = [
       }, 1000);
     }
   }
+
+  // Lógica para el menú de hamburguesa
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuOverlay = document.getElementById("menu-overlay");
+  const menuLinks = mobileMenu.querySelectorAll("a");
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("-translate-x-full");
+    menuOverlay.classList.toggle("hidden");
+  }
+
+  menuToggle.addEventListener("click", toggleMenu);
+  menuOverlay.addEventListener("click", toggleMenu);
+
+  // Cierra el menú al hacer clic en un enlace
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Añadimos un pequeño retraso para que se vea la transición del scroll
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains("-translate-x-full")) {
+          toggleMenu();
+        }
+      }, 150);
+    });
+  });
 </script>

@@ -1,43 +1,52 @@
-# Astro Starter Kit: Minimal
+# 🚀 Landing Page Vanguardista: Ascendia Digital
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Este proyecto es una landing page de alto rendimiento para 'Ascendia Digital', un coach de negocios ficticio. El objetivo principal es demostrar un dominio sólido de los fundamentos del desarrollo frontend moderno, enfocado en la arquitectura de sitios estáticos (SSG), maquetación profesional y optimización para Core Web Vitals.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> **Lighthouse Score:** `Rendimiento: 96` | `Accesibilidad: 96` | `Prácticas: 100`
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Características Principales
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **🎨 Diseño Responsivo Mobile-First:** Maquetación profesional y vanguardista en modo oscuro, construida con Tailwind CSS para una adaptabilidad perfecta a cualquier dispositivo.
+- **⚡ Rendimiento de Alta Velocidad:** Generado como un sitio estático (SSG) con Astro para garantizar tiempos de carga casi instantáneos y una experiencia de usuario fluida.
+- **📬 Formulario de Contacto Funcional:** Integración serverless con **Formspree** para recibir mensajes de potenciales clientes sin necesidad de un backend.
+- **📈 Estrategia SEO Básica:** Implementación de metaetiquetas esenciales, semántica HTML correcta y optimización de imágenes para un buen posicionamiento inicial.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Stack Tecnológico
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Framework:** Astro (SSG)
+- **Estilos:** Tailwind CSS
+- **Formularios:** Formspree (Serverless)
+- **Despliegue:** GitHub Pages / Vercel / Netlify
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🚀 Instalación y Ejecución Local
 
-## 🧞 Commands
+Sigue estos pasos para levantar el proyecto en tu máquina local.
 
-All commands are run from the root of the project, from a terminal:
+1.  **Clona el repositorio:**
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+    ```bash
+    git clone https://github.com/[TU_USUARIO]/portfolio_1_web-landing.git
+    cd portfolio_1_web-landing
+    ```
 
-## 👀 Want to learn more?
+2.  **Instala las dependencias:**
+    Se utilizará `npm` para la gestión de paquetes.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+    ```bash
+    npm install
+    ```
+
+3.  **Inicia el servidor de desarrollo:**
+    Esto levantará el proyecto en `localhost:4321` con hot-reloading.
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Genera el build de producción:**
+    Para compilar el proyecto para producción, ejecuta:
+    ```bash
+    npm run build
+    ```
